@@ -1,7 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
-
-
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
 * {
 
@@ -10,27 +8,83 @@ body {
   padding: 50px;
 }
 h1 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;;
   text-transform: uppercase;
-  font-weight: 800;
+
 }
 .cs {
   text-transform: uppercase;
-  font-weight: 800;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 4vh;
-  display: inline;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;;
+  font-size: 7vh;
+  display: block;
   color: #222222;
   /*border: 1px solid red;*/
   position: absolute;
-  right: 10%;
+  right: 5%;
   bottom: 5%;
-
   z-index: 100;
 }
+.cs::before, .cs::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.cs::before {
+  /*left:-4px;
+  background-color:white;
+  z-index: 100;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: cs-anim-2 5s infinite linear reverse;*/
+}
+.cs::after {
+  left:2px;
+  background-color: white;
+  clip: rect(44px, 450px, 56px, 0);
+  animation: cs-anim-1 8s infinite linear reverse ;
+}
 
+@keyframes cs-anim-1 {
+  0% {
+    clip: rect(100px, 450px, 90px, 0);
+  }
+  20% {
+    clip: rect(70px, 450px, 50px, 0);
+  }
+  40% {
+    clip: rect(50px, 450px, 40px, 0);
+  }
+  60% {
+    clip: rect(30px, 450px, 20px, 0);
+  }
+  80% {
+    clip: rect(5px, 450px, 0px, 0);
+  }
+}
+@keyframes cs-anim-2 {
+
+  0% {
+    clip: rect(70px, 450px, 76px, 0);
+  }
+  20% {
+    clip: rect(29px, 450px, 16px, 0);
+  }
+  40% {
+    clip: rect(76px, 450px, 3px, 0);
+  }
+  60% {
+    clip: rect(42px, 450px, 78px, 0);
+  }
+  80% {
+    clip: rect(15px, 450px, 13px, 0);
+  }
+
+}
 .name {
-  font-weight: 400;
+  font-weight: 300;
   writing-mode: vertical-rl;
   text-orientation: upright;
   display: inline-block;
@@ -57,4 +111,14 @@ h1 {
 }
 .center-img-holder {
 
+}
+
+@media (max-width:450px) {
+  .cs {
+    display: block;
+    width: 100%;
+    right: -10%;
+    bottom: -10%;
+    text-align: center;
+  }
 }

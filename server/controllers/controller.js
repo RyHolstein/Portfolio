@@ -3,7 +3,4 @@ module.exports = {
     res.render('index')
   },
 
-
-
-
 } //end of module exports
